@@ -1,0 +1,30 @@
+.Button {
+    padding: 10px;
+    color: White;
+    background: steelblue;
+    border: none;
+    font-weight: 900;
+    font-size: 24px;
+    outline: none;
+    cursor: pointer;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+/* .Button:hover {
+    color: white;
+    background-color: steelblue; 
+} */
+
+.BorderLessButton {
+    padding: 10px;
+    color: steelblue;
+    background: transparent;
+    font-weight: 900;
+    font-size: 24px;
+    border: none;
+}
+.BorderLessButton:hover {
+    color: white;
+    background-color: steelblue;
+}

@@ -1,0 +1,28 @@
+.Footer {
+    flex-shrink: 0;
+    text-align: center;
+    background-color: steelblue;
+    padding: 5px;
+    display: flex;
+    flex-flow: column; 
+}
+
+.Footer .Icons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 2.5em;
+    color: #FFFFFF;
+}
+.Footer .Copyright {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+@media screen and (min-width: 650px){
+    .Footer .Icons {
+        width: 50%;
+        margin: 0 auto;
+    }
+}

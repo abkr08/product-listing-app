@@ -1,0 +1,34 @@
+.ProductsListItem {
+    display: flex;
+    flex-flow: row;
+    border-top: 1px solid rgba(236, 236, 236, 0.87);
+    border-left: 1px solid rgba(236, 236, 236, 0.87);
+    border-right: 1px solid rgba(236, 236, 236, 0.87);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.ProductsListItem img {
+    height: 150px;
+    width: 150px;
+}
+.DetailBox {
+    text-align: left;
+}
+.ProductName {
+    text-transform: uppercase;
+    
+}
+.ProductPrice {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2.4em;
+}
+.InStock {
+    color: green;
+    font-style: italic;
+}
+.Hurry {
+    color: red;
+    font-style: italic;
+}

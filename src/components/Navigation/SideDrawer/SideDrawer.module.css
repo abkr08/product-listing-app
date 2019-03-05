@@ -1,0 +1,36 @@
+.SideDrawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 75%;
+    z-index: 2;
+    transition: transform .3s ease-in-out;
+    text-align: center;
+}
+
+.Closed {
+    transform: translateX(-100%);
+}
+.Opened {
+    transform: translateX(0);
+}
+.CloseIcon {
+    display: block;
+    font-size: 3em;
+    color: black;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.NavItems {
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column;
+}
+@media screen and (min-width: 500px){
+    .SideDrawer {
+        display: none;
+    }
+}

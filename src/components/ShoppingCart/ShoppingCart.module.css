@@ -1,0 +1,35 @@
+.ShoppingCart {
+    padding: 40px 0;
+    height: 100%;
+    
+}
+.Items div:last-child {
+    border-bottom: 1px solid rgba(236, 236, 236, 0.87);
+    margin-bottom: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.Items div:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.Total {
+    font-weight: 700;
+    font-size: 2.3em;
+    margin-bottom: 20px;
+}
+
+@media screen
+and (min-width: 650px) { 
+    .ShoppingCart {
+        width: 60%;
+        margin: 10px auto 20px auto;
+    }    
+}
+/* @media screen
+and (min-width: 700px) { 
+    .ShoppingCart {
+        width: 60%;
+        margin: 10px auto 20px auto;
+    }
+} */

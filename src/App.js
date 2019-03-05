@@ -1,28 +1,63 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
 import './App.css';
+import * as actionCreators from './Store/Actions/actionIndex';
+import Products from './components/Products/Products';
+import Navbar from './components/Navigation/Navbar/Navbar';
+import SideDrawer from './components/Navigation/SideDrawer/SideDrawer';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+import Spinner from './components/UI/Spinner/Spinner';
 
 class App extends Component {
+  state = {
+    showSideDrawer: false
+  }
+  showSideDrawer = () => {
+    this.setState({showSideDrawer: true});
+  }
+  backdropClicked = () => {
+    this.setState({showSideDrawer: false});
+  }
+  componentDidMount () {
+    this.props.getProducts();
+  }
   render() {
+    let content = (
+      <>
+        <input type='text' placeholder='Search product' />
+        <Spinner/>
+      </>
+    );
+    if (!this.props.loading){
+      content = (
+        <>
+          <input type='text' placeholder='Search product' />
+          <Products  />
+        </>
+      );
+    }
+    if (this.props.showShoppingCart){
+      content = <ShoppingCart />;
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Navbar clicked={this.showSideDrawer}/>
+        <SideDrawer showSideDrawer={this.state.showSideDrawer} backdropClicked={this.backdropClicked}/>
+        {content}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    showShoppingCart: state.showCart,
+    loading: state.loading
+  }
+}
+const mapDispatchtoProps = dispatch => {
+  return {
+    getProducts: () => dispatch(actionCreators.getProducts())
+  }
+}
+export default connect(mapStateToProps, mapDispatchtoProps)(App);
