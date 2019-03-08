@@ -48,7 +48,7 @@ const reducer = (state = initialState, action) => {
             }
         case actionTypes.CLEAR_CART: 
             return {
-                ...state, shoppingCart: []
+                ...state, shoppingCart: [], totalPrice: 0
             }
         case actionTypes.PRODUCTS_FETCH_SUCCESS: 
             return {
